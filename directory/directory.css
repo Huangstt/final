@@ -25,12 +25,13 @@ div.h2 {
     background-color: rgb(76, 180, 222);
 }
 
-#deleteNewMemberBtn {
+.deleteNewMemberBtn {
     display: inline;
     background-color: rgb(227, 143, 117);
     color: azure;
 }
 
-#deleteNewMemberBtn:hover {
+.deleteNewMemberBtn:hover {
     background-color: rgb(220, 105, 70);
+    color: azure;
 }
