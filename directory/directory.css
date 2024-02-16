@@ -1,0 +1,36 @@
+div.h2 {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgba(9, 30, 63, 0.79);
+}
+
+#insertNewMemberBtn {
+    display: inline;
+    background-color: rgb(117, 144, 227);
+    color: azure;
+}
+
+#insertNewMemberBtn:hover {
+    background-color: rgb(92, 127, 232);
+}
+
+#logoutBtn{
+    display: inline;
+    background-color: rgb(117, 196, 227);
+    color: azure;
+}
+
+#logoutBtn:hover {
+    background-color: rgb(76, 180, 222);
+}
+
+#deleteNewMemberBtn {
+    display: inline;
+    background-color: rgb(227, 143, 117);
+    color: azure;
+}
+
+#deleteNewMemberBtn:hover {
+    background-color: rgb(220, 105, 70);
+}

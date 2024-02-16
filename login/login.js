@@ -62,7 +62,9 @@ $(document).ready(() => {
       // 重新產生驗證碼
       $("#verificationCode").text(generateVerificationCode());
     } else {
-      alert("success");
+      // alert("success");
+      window.location.href = "/directory/directory.html";
+      alert("success");  //沒有這行就登入不了QAQ
     }
   });
 });
