@@ -1,12 +1,20 @@
 $(document).ready(() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const isLoggedOut = urlParams.get('logout');
+
+  // 登出完成
+  if(isLoggedOut) {
+    alert("完成登出");
+  }
+
   // 產生驗證碼
   $("#verificationCode").text(generateVerificationCode());
 
   // 綁定重新產生圖示->呼叫方法重新產生驗證碼
   $("#regenerateCode").on("click", () => {
-    let code = generateVerificationCode();
+    let newCode = generateVerificationCode();
     // alert(code);
-    $("#verificationCode").text(code);
+    $("#verificationCode").text(newCode);
   });
   // 重新產生驗證碼 方法
   function generateVerificationCode() {
@@ -57,14 +65,14 @@ $(document).ready(() => {
 
   // 綁定登入按鈕
   $("#submitBtn").on("click", (e) => {
+    e.preventDefault();
     if (!validateForm()) {
-      e.preventDefault();
+      // e.preventDefault();
       // 重新產生驗證碼
       $("#verificationCode").text(generateVerificationCode());
     } else {
-      // alert("success");
       window.location.href = "/directory/directory.html";
-      alert("success");  //沒有這行就登入不了QAQ
+      // alert("success");  //沒有這行就登入不了QAQ > 阻止form提交
     }
   });
 });

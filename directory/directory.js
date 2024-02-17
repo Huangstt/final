@@ -1,7 +1,7 @@
 $(function () {
   // 按下登出按鈕
   $("#logoutBtn").on("click", () => {
-    window.location = "/login/login.html";
+    window.location.replace("/login/login.html?logout=true");
   });
 
   // 移出姓名輸入框驗證不可為空
@@ -28,7 +28,7 @@ $(function () {
     }
   });
 
-  // 移出電話輸入框驗證不可為空====驗證/^[0-9]+$/====
+  // 移出電話輸入框驗證不可為空
   const newMemberPhone = $("#newMemberPhone");
   newMemberPhone.on("blur", () => {
     const memberPhone = newMemberPhone.val();
@@ -69,7 +69,7 @@ $(function () {
       error += "住址不可為空且制50個文字內!<br>";
     }
 
-    // 電話不可為空
+    // 電話不可為空 ====驗證/^[0-9-]+$/====
     if (memberPhone === "" || !/^[0-9-]{1,15}$/.test(memberPhone)) {
       error += "電話號碼不可為空且只可輸入數字及-，並限制15個數字內!<br>";
     }
@@ -97,7 +97,9 @@ $(function () {
     <td>${newMemberAddress.val()}</td>
     <td>${newMemberPhone.val()}</td>
     <td>
-    <button class="btn slot-button deleteNewMemberBtn">
+    <button type="button" class="btn btn-warning updateBtn">修改</button>
+   
+    <button class="btn deleteNewMemberBtn">
       刪除
     </button>
     </td>
@@ -147,9 +149,10 @@ $(function () {
             rowToDelete.remove();
             updateRowNumbers();
         });
-      } else {
-        console.log("取消刪除");
-      }
+      } 
+      // else {
+      //   console.log("取消刪除");
+      // }
     });
   });
 
@@ -159,5 +162,10 @@ $(function () {
       $(this).find("th:eq(1)").text(index + 1);
     });
   }
+
+  // // 按下修改 > 
+  // $(".updateBtn").on("click", () => {
+   
+  // })
   
 });
